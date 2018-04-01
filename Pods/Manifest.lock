@@ -1,0 +1,27 @@
+PODS:
+  - AEXML (4.1.0)
+  - GoogleMaps (2.5.0):
+    - GoogleMaps/Maps (= 2.5.0)
+  - GoogleMaps/Base (2.5.0)
+  - GoogleMaps/Maps (2.5.0):
+    - GoogleMaps/Base
+  - sqlite3 (3.21.0):
+    - sqlite3/common (= 3.21.0)
+  - sqlite3/common (3.21.0)
+  - SQLiteManager (0.2.7):
+    - sqlite3
+
+DEPENDENCIES:
+  - AEXML
+  - GoogleMaps
+  - SQLiteManager
+
+SPEC CHECKSUMS:
+  AEXML: 647fbb051280f3fb38a1a7caa62b0344055a851c
+  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
+  sqlite3: c1728c2cd4ce1c2e629d674e4a732cf0339eb906
+  SQLiteManager: 61f056e42457db34a2550c1cee65b7fdf3118b55
+
+PODFILE CHECKSUM: 3248b7d4dc0d4a3349ea334e5ddbfd47ece7acf0
+
+COCOAPODS: 1.4.0

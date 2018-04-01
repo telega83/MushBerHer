@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "MBHItemHarvest.convertRanges(rangesSet:):MBHItemHarvest.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ranges.count">
+            </PersistentString>
+            <PersistentString
+               value = "tmp">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MBHItemHarvest.getHarvestStatus():MBHItemHarvest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MBHDB.init() -&gt; MBHDB:MBHDB.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MBHItemsMushrooms">
+            </PersistentString>
+            <PersistentString
+               value = "MBHItemsBerries">
+            </PersistentString>
+            <PersistentString
+               value = "MBHItemsHerbs">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MBHDB.getItemsFromXML(file:category:):MBHDB.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MBHDB.setFavourite(id:category_id:):MBHDB.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MBHItemsMushrooms.filter({$0.id == 3 &amp;&amp; $0.category_id == 1})[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MBHItemHarvest.init(rawData:):MBHItemHarvest.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "item[&quot;type&quot;] as Int">
+            </PersistentString>
+            <PersistentString
+               value = "item[&quot;day_max&quot;] as Int">
+            </PersistentString>
+            <PersistentString
+               value = "rawData.results">
+            </PersistentString>
+            <PersistentString
+               value = "item[&quot;day_min&quot;] as Int">
+            </PersistentString>
+            <PersistentString
+               value = "_startRanges">
+            </PersistentString>
+            <PersistentString
+               value = "_endRanges">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MBHDB.createDB() -&gt; ():MBHDB.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "resItems.affectedRowCount">
+            </PersistentString>
+            <PersistentString
+               value = "MBHItemsMushrooms">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MushroomsVC.btnFavouritesTapped(_:):MushroomsVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "filteredData">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MushroomsVC.tableView(_:cellForRowAt:):MushroomsVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "resDataSet">
+            </PersistentString>
+            <PersistentString
+               value = "filteredData">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MBHItemHarvest.generateInsertHarvestQueries(itemId:):MBHItemHarvest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MushroomsVC.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():MushroomsVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "&quot;item_1_\(MBHDB.sharedInstance.MBHItemsMushrooms[row].id)&quot;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MBHDB.getItemsFromDB(category:):MBHDB.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MBHItemsMushrooms">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MBHDB.getItemsFromXML() -&gt; ():MBHDB.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MBHItems">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MBHDB.createDB():MBHDB.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "insertQuery">
+            </PersistentString>
+            <PersistentString
+               value = "MBHItemsMushrooms">
+            </PersistentString>
+            <PersistentString
+               value = "resItems.affectedRowCount">
+            </PersistentString>
+            <PersistentString
+               value = "item.harvestData.massRanges">
+            </PersistentString>
+            <PersistentString
+               value = "MBHItemsBerries">
+            </PersistentString>
+            <PersistentString
+               value = "item">
+            </PersistentString>
+            <PersistentString
+               value = "MBHItemsHerbs">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MushroomsVC.tableView(_:editActionsForRowAt:):MushroomsVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.resDataSet[indexPath.row].category_id">
+            </PersistentString>
+            <PersistentString
+               value = "self.resDataSet[indexPath.row].id">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MBHItemHarvest.init(startRanges:poorRanges:massRanges:endRanges:):MBHItemHarvest.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "_massRanges">
+            </PersistentString>
+            <PersistentString
+               value = "_startRanges">
+            </PersistentString>
+            <PersistentString
+               value = "_poorRanges">
+            </PersistentString>
+            <PersistentString
+               value = "_endRanges">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MBHItemHarvest.generateInsertHarvestQueries():MBHItemHarvest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MBHDB.getItemsFromXML(file : String, category : UInt) -&gt; ():MBHDB.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MBHItems">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MushroomsVC.tableView(_:numberOfRowsInSection:):MushroomsVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MBHDB.sharedInstance.getItems(category: 1).count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
