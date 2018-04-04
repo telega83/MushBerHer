@@ -13,10 +13,19 @@ class MushroomsVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var btnFavourites: UIButton!
+    @IBOutlet weak var filterMenuView: FilterMenuView!
     
     var filteredData = [MBHItem]()
     var isSearching = false
     var resDataSet = [MBHItem]()
+    
+    @IBAction func btnFilterTapped(_ sender: Any) {
+        if filterMenuView.isHidden {
+            filterMenuView.isHidden = false
+        } else {
+            filterMenuView.isHidden = true
+        }
+    }
     
     @IBAction func btnFavouritesTapped(_ sender: UIButton) {
         if MBHDB.sharedInstance.mushroomsShowFavourites {
