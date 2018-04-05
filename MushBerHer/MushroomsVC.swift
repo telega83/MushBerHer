@@ -14,6 +14,10 @@ class MushroomsVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var btnFavourites: UIButton!
     @IBOutlet weak var filterMenuView: FilterMenuView!
+    @IBOutlet weak var switchEdibility_5_6: UISwitch!
+    @IBOutlet weak var switchEdibility_3_4: UISwitch!
+    @IBOutlet weak var switchEdibility_1_2: UISwitch!
+    @IBOutlet weak var switchHarvest: UISwitch!
     
     var filteredData = [MBHItem]()
     var isSearching = false

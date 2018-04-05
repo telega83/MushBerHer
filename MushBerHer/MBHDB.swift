@@ -35,6 +35,10 @@ class MBHDB {
     var berriesShowFavourites: Bool
     var herbsShowFavourites: Bool
     
+    //Filters
+    var mushroomsEdibilityFilter: [UInt] = [1, 2, 3, 4, 5, 6]
+    var mushroomsHarvestFilter: [Int] = [0, 1, 2, 3, 4]
+    
     func wakeUp () {
         //Initialises singleton
     }
@@ -233,9 +237,9 @@ class MBHDB {
         var result = [MBHItem]()
         if category == 1 {
             if mushroomsShowFavourites {
-                result = MBHItemsMushrooms.filter({$0.isFavourite == 1})
+                result = MBHItemsMushrooms.filter({$0.isFavourite == 1 && mushroomsEdibilityFilter.contains($0.edibility_id)  && mushroomsHarvestFilter.contains($0.harvestData.getHarvestStatus())})
             } else {
-                result = MBHItemsMushrooms
+                result = MBHItemsMushrooms.filter({mushroomsEdibilityFilter.contains($0.edibility_id)  && mushroomsHarvestFilter.contains($0.harvestData.getHarvestStatus())})
             }
         } else if category == 2 {
             if berriesShowFavourites {
