@@ -267,7 +267,6 @@ class MBHDB {
     }
     
     func setFavourite(id: UInt, category_id: UInt) {
-        
         if category_id == 1 {
             if MBHItemsMushrooms.filter({$0.id == id && $0.category_id == category_id})[0].isFavourite == 0 {
                 MBHItemsMushrooms.filter({$0.id == id && $0.category_id == category_id})[0].isFavourite = 1

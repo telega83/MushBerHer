@@ -14,6 +14,7 @@ class MushroomsVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var btnFavourites: UIButton!
     @IBOutlet weak var filterMenuView: FilterMenuView!
+    
     @IBOutlet weak var switchEdibility_5_6: UISwitch!
     @IBOutlet weak var switchEdibility_3_4: UISwitch!
     @IBOutlet weak var switchEdibility_1_2: UISwitch!
@@ -45,12 +46,54 @@ class MushroomsVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
         }
     }
     
+    func switchStateChanged() {
+        MBHDB.sharedInstance.mushroomsEdibilityFilter = []
+        MBHDB.sharedInstance.mushroomsHarvestFilter = []
+        if switchEdibility_5_6.isOn { MBHDB.sharedInstance.mushroomsEdibilityFilter.append(contentsOf: [5, 6]) }
+        if switchEdibility_3_4.isOn { MBHDB.sharedInstance.mushroomsEdibilityFilter.append(contentsOf: [3, 4]) }
+        if switchEdibility_1_2.isOn { MBHDB.sharedInstance.mushroomsEdibilityFilter.append(contentsOf: [1, 2]) }
+        if switchHarvest.isOn {
+            MBHDB.sharedInstance.mushroomsHarvestFilter = [1, 2, 3, 4]
+        } else {
+            MBHDB.sharedInstance.mushroomsHarvestFilter = [0, 1, 2, 4]
+        }
+        
+        print(MBHDB.sharedInstance.mushroomsEdibilityFilter)
+        print(MBHDB.sharedInstance.mushroomsHarvestFilter)
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
+        
+        //Restore filter switches
+        switchEdibility_5_6.setOn(false, animated: false)
+        switchEdibility_3_4.setOn(false, animated: false)
+        switchEdibility_1_2.setOn(false, animated: false)
+        switchHarvest.setOn(false, animated: false)
+        
+        if MBHDB.sharedInstance.mushroomsEdibilityFilter.contains(5) || MBHDB.sharedInstance.mushroomsEdibilityFilter.contains(6) {
+            switchEdibility_5_6.setOn(true, animated: false)
+        }
+        if MBHDB.sharedInstance.mushroomsEdibilityFilter.contains(3) || MBHDB.sharedInstance.mushroomsEdibilityFilter.contains(4) {
+            switchEdibility_3_4.setOn(true, animated: false)
+        }
+        if MBHDB.sharedInstance.mushroomsEdibilityFilter.contains(1) || MBHDB.sharedInstance.mushroomsEdibilityFilter.contains(2) {
+            switchEdibility_1_2.setOn(true, animated: false)
+        }
+        if !MBHDB.sharedInstance.mushroomsHarvestFilter.contains(0) {
+            switchHarvest.setOn(true, animated: false)
+        }
+        
+        //Targets for filter switches
+        switchEdibility_5_6.addTarget(self, action: #selector(MushroomsVC.switchStateChanged), for: UIControlEvents.valueChanged)
+        switchEdibility_3_4.addTarget(self, action: #selector(MushroomsVC.switchStateChanged), for: UIControlEvents.valueChanged)
+        switchEdibility_1_2.addTarget(self, action: #selector(MushroomsVC.switchStateChanged), for: UIControlEvents.valueChanged)
+        switchHarvest.addTarget(self, action: #selector(MushroomsVC.switchStateChanged), for: UIControlEvents.valueChanged)
         
         //Restore content offset
         tableView.setContentOffset(MBHDB.sharedInstance.mushroomsContentOffset, animated: true)
