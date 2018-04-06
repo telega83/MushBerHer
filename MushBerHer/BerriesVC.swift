@@ -13,10 +13,24 @@ class BerriesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, U
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var btnFavourites: UIButton!
+    @IBOutlet weak var filterMenuView: FilterMenuView!
+    
+    @IBOutlet weak var switchEdibility_5_6: UISwitch!
+    @IBOutlet weak var switchEdibility_3_4: UISwitch!
+    @IBOutlet weak var switchEdibility_1_2: UISwitch!
+    @IBOutlet weak var switchHarvest: UISwitch!
     
     var filteredData = [MBHItem]()
     var isSearching = false
     var resDataSet = [MBHItem]()
+    
+    @IBAction func btnFilterTapped(_ sender: Any) {
+        if filterMenuView.isHidden {
+            filterMenuView.isHidden = false
+        } else {
+            filterMenuView.isHidden = true
+        }
+    }
     
     @IBAction func btnFavouritesTapped(_ sender: Any) {
         if MBHDB.sharedInstance.berriesShowFavourites {
@@ -32,12 +46,52 @@ class BerriesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, U
         }
     }
     
+    func switchStateChanged() {
+        MBHDB.sharedInstance.berriesEdibilityFilter = []
+        MBHDB.sharedInstance.mushroomsHarvestFilter = []
+        if switchEdibility_5_6.isOn { MBHDB.sharedInstance.berriesEdibilityFilter.append(contentsOf: [5, 6]) }
+        if switchEdibility_3_4.isOn { MBHDB.sharedInstance.berriesEdibilityFilter.append(contentsOf: [3, 4]) }
+        if switchEdibility_1_2.isOn { MBHDB.sharedInstance.berriesEdibilityFilter.append(contentsOf: [1, 2]) }
+        if switchHarvest.isOn {
+            MBHDB.sharedInstance.berriesHarvestFilter = [1, 2, 3, 4]
+        } else {
+            MBHDB.sharedInstance.berriesHarvestFilter = [0, 1, 2, 4]
+        }
+        
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
+        
+        //Restore filter switches
+        switchEdibility_5_6.setOn(false, animated: false)
+        switchEdibility_3_4.setOn(false, animated: false)
+        switchEdibility_1_2.setOn(false, animated: false)
+        switchHarvest.setOn(false, animated: false)
+        
+        if MBHDB.sharedInstance.berriesEdibilityFilter.contains(5) || MBHDB.sharedInstance.berriesEdibilityFilter.contains(6) {
+            switchEdibility_5_6.setOn(true, animated: false)
+        }
+        if MBHDB.sharedInstance.berriesEdibilityFilter.contains(3) || MBHDB.sharedInstance.berriesEdibilityFilter.contains(4) {
+            switchEdibility_3_4.setOn(true, animated: false)
+        }
+        if MBHDB.sharedInstance.berriesEdibilityFilter.contains(1) || MBHDB.sharedInstance.berriesEdibilityFilter.contains(2) {
+            switchEdibility_1_2.setOn(true, animated: false)
+        }
+        if !MBHDB.sharedInstance.berriesHarvestFilter.contains(0) {
+            switchHarvest.setOn(true, animated: false)
+        }
+        
+        //Targets for filter switches
+        switchEdibility_5_6.addTarget(self, action: #selector(BerriesVC.switchStateChanged), for: UIControlEvents.valueChanged)
+        switchEdibility_3_4.addTarget(self, action: #selector(BerriesVC.switchStateChanged), for: UIControlEvents.valueChanged)
+        switchEdibility_1_2.addTarget(self, action: #selector(BerriesVC.switchStateChanged), for: UIControlEvents.valueChanged)
+        switchHarvest.addTarget(self, action: #selector(BerriesVC.switchStateChanged), for: UIControlEvents.valueChanged)
         
         //Restore content offset
         tableView.setContentOffset(MBHDB.sharedInstance.berriesContentOffset, animated: true)

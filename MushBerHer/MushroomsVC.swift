@@ -58,8 +58,6 @@ class MushroomsVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
             MBHDB.sharedInstance.mushroomsHarvestFilter = [0, 1, 2, 4]
         }
         
-        print(MBHDB.sharedInstance.mushroomsEdibilityFilter)
-        print(MBHDB.sharedInstance.mushroomsHarvestFilter)
         tableView.reloadData()
     }
     

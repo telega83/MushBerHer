@@ -38,6 +38,8 @@ class MBHDB {
     //Filters
     var mushroomsEdibilityFilter: [UInt] = [1, 2, 3, 4, 5, 6]
     var mushroomsHarvestFilter: [Int] = [0, 1, 2, 3, 4]
+    var berriesEdibilityFilter: [UInt] = [1, 2, 3, 4, 5, 6]
+    var berriesHarvestFilter: [Int] = [0, 1, 2, 3, 4]
     
     func wakeUp () {
         //Initialises singleton
@@ -243,9 +245,9 @@ class MBHDB {
             }
         } else if category == 2 {
             if berriesShowFavourites {
-                result = MBHItemsBerries.filter({$0.isFavourite == 1})
+                result = MBHItemsBerries.filter({$0.isFavourite == 1 && berriesEdibilityFilter.contains($0.edibility_id)  && berriesHarvestFilter.contains($0.harvestData.getHarvestStatus())})
             } else {
-                result = MBHItemsBerries
+                result = MBHItemsBerries.filter({berriesEdibilityFilter.contains($0.edibility_id)  && berriesHarvestFilter.contains($0.harvestData.getHarvestStatus())})
             }
         } else if category == 3{
             if herbsShowFavourites {
