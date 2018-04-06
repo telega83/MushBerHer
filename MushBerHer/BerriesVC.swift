@@ -48,7 +48,7 @@ class BerriesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, U
     
     func switchStateChanged() {
         MBHDB.sharedInstance.berriesEdibilityFilter = []
-        MBHDB.sharedInstance.mushroomsHarvestFilter = []
+        MBHDB.sharedInstance.berriesHarvestFilter = []
         if switchEdibility_5_6.isOn { MBHDB.sharedInstance.berriesEdibilityFilter.append(contentsOf: [5, 6]) }
         if switchEdibility_3_4.isOn { MBHDB.sharedInstance.berriesEdibilityFilter.append(contentsOf: [3, 4]) }
         if switchEdibility_1_2.isOn { MBHDB.sharedInstance.berriesEdibilityFilter.append(contentsOf: [1, 2]) }
