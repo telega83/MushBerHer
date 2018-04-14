@@ -14,6 +14,8 @@
 		7C1071181ED388D700DE8F98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C1071161ED388D700DE8F98 /* LaunchScreen.storyboard */; };
 		7C1386E41FBE4A25002DA89B /* TextFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1386E31FBE4A25002DA89B /* TextFormatter.swift */; };
 		7C1AC72C1F6B2C9F003BBE57 /* MushroomDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1AC72B1F6B2C9F003BBE57 /* MushroomDetailsVC.swift */; };
+		7C3E2D8F20827A230073C470 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E2D8E20827A230073C470 /* InfoVC.swift */; };
+		7C3E2D9120827B7C0073C470 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E2D9020827B7C0073C470 /* InfoTableViewCell.swift */; };
 		7C4186EA1F7AFF4700BA37F8 /* ItemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4186E91F7AFF4700BA37F8 /* ItemImage.swift */; };
 		7C620DEC2044A48B00D80EB1 /* MushBerHer.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7C620DEB2044A48B00D80EB1 /* MushBerHer.sqlite */; };
 		7C66072C1FEC5F9A00BEE037 /* MBHItemHarvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C66072B1FEC5F9A00BEE037 /* MBHItemHarvest.swift */; };
@@ -36,6 +38,7 @@
 		7C90B3E21F46360200575DC1 /* HerbsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C90B3E11F46360200575DC1 /* HerbsTableViewCell.swift */; };
 		7CAB35861FC344BE00180C27 /* BerriesDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB35851FC344BE00180C27 /* BerriesDetailsVC.swift */; };
 		7CAB35881FC34CC200180C27 /* HerbsDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB35871FC34CC200180C27 /* HerbsDetailsVC.swift */; };
+		7CD43B442080995A00B48230 /* MBHInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD43B432080995A00B48230 /* MBHInfoItem.swift */; };
 		7CDEDA271FCF209D00D1B965 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEDA261FCF209D00D1B965 /* StartVC.swift */; };
 		7CF588D21EF9C8130072DC72 /* MainMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF588D11EF9C8130072DC72 /* MainMenuButton.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +55,8 @@
 		7C1071191ED388D700DE8F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C1386E31FBE4A25002DA89B /* TextFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFormatter.swift; sourceTree = "<group>"; };
 		7C1AC72B1F6B2C9F003BBE57 /* MushroomDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MushroomDetailsVC.swift; sourceTree = "<group>"; };
+		7C3E2D8E20827A230073C470 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
+		7C3E2D9020827B7C0073C470 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		7C4186E91F7AFF4700BA37F8 /* ItemImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemImage.swift; sourceTree = "<group>"; };
 		7C620DEB2044A48B00D80EB1 /* MushBerHer.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MushBerHer.sqlite; sourceTree = "<group>"; };
 		7C66072B1FEC5F9A00BEE037 /* MBHItemHarvest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBHItemHarvest.swift; sourceTree = "<group>"; };
@@ -74,6 +79,7 @@
 		7C90B3E11F46360200575DC1 /* HerbsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HerbsTableViewCell.swift; sourceTree = "<group>"; };
 		7CAB35851FC344BE00180C27 /* BerriesDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerriesDetailsVC.swift; sourceTree = "<group>"; };
 		7CAB35871FC34CC200180C27 /* HerbsDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerbsDetailsVC.swift; sourceTree = "<group>"; };
+		7CD43B432080995A00B48230 /* MBHInfoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBHInfoItem.swift; sourceTree = "<group>"; };
 		7CDEDA261FCF209D00D1B965 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		7CF588D11EF9C8130072DC72 /* MainMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +138,7 @@
 				7C10710D1ED388D700DE8F98 /* AppDelegate.swift */,
 				7C8C96EB1EDB063D00C403D0 /* MBHItem.swift */,
 				7C66072B1FEC5F9A00BEE037 /* MBHItemHarvest.swift */,
+				7CD43B432080995A00B48230 /* MBHInfoItem.swift */,
 				7C8C96E91EDB036B00C403D0 /* MBHDB.swift */,
 				7C1386E31FBE4A25002DA89B /* TextFormatter.swift */,
 				7C4186E91F7AFF4700BA37F8 /* ItemImage.swift */,
@@ -142,12 +149,14 @@
 				7C90B3D91F44E4AC00575DC1 /* BerriesVC.swift */,
 				7C90B3DF1F46339B00575DC1 /* HerbsVC.swift */,
 				7C702034203241C7009E3B94 /* MapVC.swift */,
+				7C3E2D8E20827A230073C470 /* InfoVC.swift */,
 				7C1AC72B1F6B2C9F003BBE57 /* MushroomDetailsVC.swift */,
 				7CAB35851FC344BE00180C27 /* BerriesDetailsVC.swift */,
 				7CAB35871FC34CC200180C27 /* HerbsDetailsVC.swift */,
 				7C90B3D51F38FA4600575DC1 /* MushroomsTableViewCell.swift */,
 				7C90B3DB1F44EBE400575DC1 /* BerriesTableViewCell.swift */,
 				7C90B3E11F46360200575DC1 /* HerbsTableViewCell.swift */,
+				7C3E2D9020827B7C0073C470 /* InfoTableViewCell.swift */,
 				7CF588D11EF9C8130072DC72 /* MainMenuButton.swift */,
 				7C1071111ED388D700DE8F98 /* Main.storyboard */,
 				7C1071141ED388D700DE8F98 /* Assets.xcassets */,
@@ -258,12 +267,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MushBerHer/Pods-MushBerHer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AEXML/AEXML.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-14/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLiteManager/SQLiteManager.framework",
 				"${BUILT_PRODUCTS_DIR}/sqlite3/sqlite3.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEXML.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLiteManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlite3.framework",
 			);
@@ -317,8 +328,11 @@
 			files = (
 				7C1386E41FBE4A25002DA89B /* TextFormatter.swift in Sources */,
 				7C7AE096206ABA6700827F73 /* FilterMenuView.swift in Sources */,
+				7C3E2D9120827B7C0073C470 /* InfoTableViewCell.swift in Sources */,
 				7C4186EA1F7AFF4700BA37F8 /* ItemImage.swift in Sources */,
 				7C90B3D41F38F4C800575DC1 /* MushroomsVC.swift in Sources */,
+				7C3E2D8F20827A230073C470 /* InfoVC.swift in Sources */,
+				7CD43B442080995A00B48230 /* MBHInfoItem.swift in Sources */,
 				7CDEDA271FCF209D00D1B965 /* StartVC.swift in Sources */,
 				7C90B3E01F46339B00575DC1 /* HerbsVC.swift in Sources */,
 				7C90B3E21F46360200575DC1 /* HerbsTableViewCell.swift in Sources */,

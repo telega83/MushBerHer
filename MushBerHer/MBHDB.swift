@@ -21,6 +21,9 @@ class MBHDB {
     var MBHItemsBerries = [MBHItem]()
     var MBHItemsHerbs = [MBHItem]()
     
+    //Info items
+    var MBHInfo = [MBHInfoItem]()
+    
     //UITableView offsets
     var mushroomsContentOffset: CGPoint
     var berriesContentOffset: CGPoint
@@ -143,10 +146,20 @@ class MBHDB {
                         let _ = try database.query(String(query))
                     }
                 }
+                
+                //Get info items
+                getInfoFromXML()
+                
+                //Inserting info items
+                for item in MBHInfo {
+                    let insertQuery = "insert into info_item (id, item_id, icon, title, title_advanced, text_1, text_2, text_3, text_4) values (null, \(item.id), '\(item.icon)', '\(item.title)', '\(item.titleAdvanced)', '\(item.text_1)', '\(item.text_2)', '\(item.text_3)', '\(item.text_4)')"
+                    let _ = try database.query(insertQuery)
+                }
             } else { //Get data from DB
                 getItemsFromDB(category: 1)
                 getItemsFromDB(category: 2)
                 getItemsFromDB(category: 3)
+                getInfoFromDB()
             }
         } catch {
             return
@@ -237,6 +250,68 @@ class MBHDB {
         }
     }
     
+    func getInfoFromDB() {
+        do {
+            let database = try SQLitePool.manager().initialize(database: "MushBerHer", withExtension: "sqlite")
+            let resItems = try database.query("select * from info_item")
+            
+            for item in resItems.results! {
+                let id = item["item_id"] as! Int
+                let icon = item["icon"] as! String
+                let title = item["title"] as! String
+                let titleAdvanced = item["title_advanced"] as! String
+                let text_1 = item["text_1"] as! String
+                let text_2 = item["text_2"] as! String
+                let text_3 = item["text_3"] as! String
+                let text_4 = item["text_4"] as! String
+            
+                MBHInfo.append(MBHInfoItem(id: id, icon: icon, title: title, titleAdvanced: titleAdvanced, text_1: text_1, text_2: text_2, text_3: text_3, text_4: text_4))
+            }
+        } catch {
+            return
+        }
+    }
+    
+    func getInfoFromXML() {
+        guard let
+            xmlPath = Bundle.main.path(forResource: "memo", ofType: "xml"),
+            let data = try? Data(contentsOf: URL(fileURLWithPath: xmlPath))
+            else { return }
+        
+        do {
+            let xmlDoc = try AEXMLDocument(xml: data)
+            
+            for item in xmlDoc.root["item"].all! {
+                let id = Int(item["id"].value!)
+                let icon = item["icon"].value!
+                let title = item["title"].value!
+                let titleAdvanced = item["title_advanced"].value!
+                
+                var text_1 = ""
+                var text_2 = ""
+                var text_3 = ""
+                var text_4 = ""
+                
+                if let _ = item["text_1"].value {
+                    text_1 = item["text_1"].value!
+                }
+                if let _ = item["text_2"].value {
+                    text_2 = item["text_2"].value!
+                }
+                if let _ = item["text_3"].value {
+                    text_3 = item["text_3"].value!
+                }
+                if let _ = item["text_4"].value {
+                    text_4 = item["text_4"].value!
+                }
+                
+                MBHInfo.append(MBHInfoItem(id: id!, icon: icon, title: title, titleAdvanced: titleAdvanced, text_1: text_1, text_2: text_2, text_3: text_3, text_4: text_4))
+            }
+        } catch {
+            return
+        }
+    }
+    
     func getItems(category: UInt) -> [MBHItem]{
         var result = [MBHItem]()
         if category == 1 {
@@ -260,7 +335,7 @@ class MBHDB {
         }
         return result
     }
-    
+
     private func setFavouriteInDB(id: UInt, category_id: UInt, isFavourite: Int) {
         do {
             let database = try SQLitePool.manager().initialize(database: "MushBerHer", withExtension: "sqlite")
