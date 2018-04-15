@@ -38,4 +38,24 @@ class InfoVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
     }
+    
+    //Navigate to Info details view
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "infoDetails",
+        let destination = segue.destination as? InfoDetailsVC,
+        let row = tableView.indexPathForSelectedRow?.row {
+            destination.itemTitle = MBHDB.sharedInstance.MBHInfo[row].title
+            destination.text = MBHDB.sharedInstance.MBHInfo[row].text_1 + MBHDB.sharedInstance.MBHInfo[row].text_2 + MBHDB.sharedInstance.MBHInfo[row].text_3 + MBHDB.sharedInstance.MBHInfo[row].text_4
+            
+        }
+    }
 }
+
+
+
+
+
+
+
+
+

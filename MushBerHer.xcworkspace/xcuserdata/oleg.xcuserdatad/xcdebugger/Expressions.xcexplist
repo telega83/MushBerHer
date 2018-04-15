@@ -33,6 +33,17 @@
          contextName = "MBHItemHarvest.generateInsertHarvestQueries(itemId:):MBHItemHarvest.swift">
       </ContextState>
       <ContextState
+         contextName = "InfoVC.prepare(for:sender:):InfoVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MBHDB.sharedInstance.MBHInfo[row]">
+            </PersistentString>
+            <PersistentString
+               value = "MBHDB.sharedInstance.MBHInfo[row].title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MBHItemHarvest.convertRanges(rangesSet:):MBHItemHarvest.swift">
          <PersistentStrings>
             <PersistentString
@@ -47,16 +58,16 @@
          contextName = "MBHItemHarvest.init(startRanges:poorRanges:massRanges:endRanges:):MBHItemHarvest.swift">
          <PersistentStrings>
             <PersistentString
-               value = "_startRanges">
+               value = "_massRanges">
             </PersistentString>
             <PersistentString
-               value = "_massRanges">
+               value = "_endRanges">
             </PersistentString>
             <PersistentString
                value = "_poorRanges">
             </PersistentString>
             <PersistentString
-               value = "_endRanges">
+               value = "_startRanges">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -96,13 +107,13 @@
          contextName = "MushroomsVC.tableView(_:cellForRowAt:):MushroomsVC.swift">
          <PersistentStrings>
             <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
                value = "resDataSet">
             </PersistentString>
             <PersistentString
                value = "filteredData">
-            </PersistentString>
-            <PersistentString
-               value = "indexPath.row">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -116,16 +127,16 @@
                value = "item[&quot;day_max&quot;] as Int">
             </PersistentString>
             <PersistentString
-               value = "_endRanges">
+               value = "rawData.results">
             </PersistentString>
             <PersistentString
                value = "item[&quot;day_min&quot;] as Int">
             </PersistentString>
             <PersistentString
-               value = "rawData.results">
+               value = "_startRanges">
             </PersistentString>
             <PersistentString
-               value = "_startRanges">
+               value = "_endRanges">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -195,13 +206,13 @@
          contextName = "MBHDB.init() -&gt; MBHDB:MBHDB.swift">
          <PersistentStrings>
             <PersistentString
+               value = "MBHItemsMushrooms">
+            </PersistentString>
+            <PersistentString
                value = "MBHItemsBerries">
             </PersistentString>
             <PersistentString
                value = "MBHItemsHerbs">
-            </PersistentString>
-            <PersistentString
-               value = "MBHItemsMushrooms">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
