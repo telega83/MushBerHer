@@ -682,7 +682,7 @@
                                 <color key="backgroundColor" red="0.72001903550000002" green="0.1567177431" blue="0.69283201250000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vym-VO-c4Q">
-                                <rect key="frame" x="0.0" y="68" width="320" height="500"/>
+                                <rect key="frame" x="0.0" y="60" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
@@ -1050,7 +1050,6 @@
         <image name="menu_mushrooms" width="192" height="192"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qhs-sL-I1z"/>
         <segue reference="fvY-FQ-jxX"/>
         <segue reference="ft7-ji-MiJ"/>
         <segue reference="n48-uK-c7A"/>

@@ -45,7 +45,7 @@ class InfoVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let destination = segue.destination as? InfoDetailsVC,
         let row = tableView.indexPathForSelectedRow?.row {
             destination.itemTitle = MBHDB.sharedInstance.MBHInfo[row].title
-            destination.text = MBHDB.sharedInstance.MBHInfo[row].text_1 + MBHDB.sharedInstance.MBHInfo[row].text_2 + MBHDB.sharedInstance.MBHInfo[row].text_3 + MBHDB.sharedInstance.MBHInfo[row].text_4
+            destination.text = "\(MBHDB.sharedInstance.MBHInfo[row].text_1)&#13;&#10;&#13;&#10;\(MBHDB.sharedInstance.MBHInfo[row].text_2)\(MBHDB.sharedInstance.MBHInfo[row].text_3)\(MBHDB.sharedInstance.MBHInfo[row].text_4)"
             
         }
     }
