@@ -144,7 +144,6 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AEXML/AEXML.framework"
-  install_framework "${PODS_ROOT}/Reveal-SDK/RevealServer-14/iOS/RevealServer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SQLiteManager/SQLiteManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/sqlite3/sqlite3.framework"
 fi

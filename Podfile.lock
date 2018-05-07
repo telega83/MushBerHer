@@ -1,11 +1,5 @@
 PODS:
   - AEXML (4.2.2)
-  - GoogleMaps (2.6.0):
-    - GoogleMaps/Maps (= 2.6.0)
-  - GoogleMaps/Base (2.6.0)
-  - GoogleMaps/Maps (2.6.0):
-    - GoogleMaps/Base
-  - Reveal-SDK (14)
   - sqlite3 (3.23.1):
     - sqlite3/common (= 3.23.1)
   - sqlite3/common (3.23.1)
@@ -14,25 +8,19 @@ PODS:
 
 DEPENDENCIES:
   - AEXML (~> 4.2.2)
-  - GoogleMaps
-  - Reveal-SDK
   - SQLiteManager
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AEXML
-    - GoogleMaps
-    - Reveal-SDK
     - sqlite3
     - SQLiteManager
 
 SPEC CHECKSUMS:
   AEXML: 5ebafc1b75e0bcf0f1b09b8ca8fed2d5a199479b
-  GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
-  Reveal-SDK: 55b5c5545233b680c2f8da734f202acc15d422b7
   sqlite3: 2b886f1be62fce4f211ea7df03a72a3b6932a78b
   SQLiteManager: 61f056e42457db34a2550c1cee65b7fdf3118b55
 
-PODFILE CHECKSUM: 46f588d79ba51ba22330b42df9df2265b95a91ea
+PODFILE CHECKSUM: 545b244bceb13c3702fd30bf8a5966cc8c83200c
 
 COCOAPODS: 1.5.0

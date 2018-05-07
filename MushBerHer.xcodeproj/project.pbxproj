@@ -195,7 +195,6 @@
 				7C1071071ED388D600DE8F98 /* Frameworks */,
 				7C1071081ED388D600DE8F98 /* Resources */,
 				0856069FFB7430605C02C245 /* [CP] Embed Pods Frameworks */,
-				497C6057A12DE30EC3D36847 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,38 +269,18 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MushBerHer/Pods-MushBerHer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AEXML/AEXML.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-14/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLiteManager/SQLiteManager.framework",
 				"${BUILT_PRODUCTS_DIR}/sqlite3/sqlite3.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEXML.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLiteManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlite3.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MushBerHer/Pods-MushBerHer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		497C6057A12DE30EC3D36847 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MushBerHer/Pods-MushBerHer-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MushBerHer/Pods-MushBerHer-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E9B6470C8CCE9B93C47D72F7 /* [CP] Check Pods Manifest.lock */ = {

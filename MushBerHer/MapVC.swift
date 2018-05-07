@@ -7,37 +7,40 @@
 //
 
 import UIKit
-import GoogleMaps
+import MapKit
 
-class MapVC: UIViewController {
+class MapVC: UIViewController, MKMapViewDelegate {
 
+    @IBOutlet weak var map: MKMapView!
+    
+    let locationMager = CLLocationManager()
+    let regionRadius: CLLocationDistance = 500
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
-        
-        
+        map.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        locationAuthStatus()
     }
 
-    
-    /*
-    override func loadView() {
-        //let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        //let gmsMapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-    
-        //view = gmsMapView
-        
-        //view.addSubview(mapView)
-        //view = mapView
-        
-        /*let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView*/
+    func locationAuthStatus() {
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            map.showsUserLocation = true
+        } else {
+            locationMager.requestWhenInUseAuthorization()
+        }
     }
-     */
-
-
+    
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
+        map.setRegion(coordinateRegion, animated: true)
+    }
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        if let loc = userLocation.location {
+            centerMapOnLocation(location: loc)
+        }
+    }
 }

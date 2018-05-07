@@ -8,7 +8,4 @@ target 'MushBerHer' do
   # Pods for MushBerHer
   pod 'SQLiteManager'
   pod 'AEXML', '~> 4.2.2'
-  pod 'GoogleMaps'
-  pod 'Reveal-SDK', configurations: ['Debug']
-
 end
