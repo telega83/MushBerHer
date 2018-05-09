@@ -399,14 +399,54 @@
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wbM-TD-TUL">
-                                <rect key="frame" x="0.0" y="60" width="320" height="325"/>
+                                <rect key="frame" x="0.0" y="60" width="320" height="508"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qn-Uc-aOm">
+                                <rect key="frame" x="262" y="510" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="center"/>
+                                <connections>
+                                    <action selector="btnCenterTapped:" destination="FSU-pX-9k4" eventType="touchUpInside" id="GWe-Rn-glL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTh-oF-j5i">
+                                <rect key="frame" x="262" y="452" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="add_pin"/>
+                                <connections>
+                                    <action selector="btnAddAnnotationTapped:" destination="FSU-pX-9k4" eventType="touchUpInside" id="DXR-je-glG"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1jv-49-feX" customClass="MapSearchView" customModule="MushBerHer" customModuleProvider="target">
+                                <rect key="frame" x="16" y="68" width="288" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4R8-ir-21u">
+                                        <rect key="frame" x="0.0" y="43" width="288" height="437"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mapSearchCell" id="qLQ-1E-2TV">
+                                                <rect key="frame" x="0.0" y="28" width="288" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qLQ-1E-2TV" id="SiA-xd-91g">
+                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
                         <outlet property="map" destination="wbM-TD-TUL" id="2qE-w3-Kpx"/>
+                        <outlet property="searchView" destination="1jv-49-feX" id="PtK-u1-pvh"/>
+                        <outlet property="tableView" destination="4R8-ir-21u" id="3se-xT-8tv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYa-hV-uEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1035,7 +1075,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_pin" width="72" height="72"/>
         <image name="back" width="32" height="32"/>
+        <image name="center" width="72" height="72"/>
         <image name="favourite" width="72" height="72"/>
         <image name="favourite_cell" width="72" height="72"/>
         <image name="filter" width="72" height="72"/>
@@ -1048,11 +1090,10 @@
         <image name="menu_mushrooms" width="192" height="192"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HcL-dd-vP9"/>
-        <segue reference="fvY-FQ-jxX"/>
-        <segue reference="ft7-ji-MiJ"/>
-        <segue reference="xlY-PU-2qB"/>
-        <segue reference="NQn-DG-A6j"/>
+        <segue reference="1kl-cq-mx5"/>
+        <segue reference="h5G-Va-yZj"/>
+        <segue reference="n48-uK-c7A"/>
+        <segue reference="GZl-cn-Vo9"/>
         <segue reference="kTg-jg-Npa"/>
     </inferredMetricsTieBreakers>
 </document>

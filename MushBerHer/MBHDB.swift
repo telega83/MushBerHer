@@ -24,6 +24,9 @@ class MBHDB {
     //Info items
     var MBHInfo = [MBHInfoItem]()
     
+    //Map annotations
+    var MBHAnnotations = [MBHItemAnnotation]()
+    
     //UITableView offsets
     var mushroomsContentOffset: CGPoint
     var berriesContentOffset: CGPoint
