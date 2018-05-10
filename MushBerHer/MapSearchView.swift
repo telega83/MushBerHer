@@ -14,5 +14,6 @@ class MapSearchView: UIView {
         
         self.layoutIfNeeded()
         layer.cornerRadius = 7.0
+        layer.masksToBounds = true
     }
 }

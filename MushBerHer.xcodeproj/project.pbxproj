@@ -21,6 +21,7 @@
 		7C66072C1FEC5F9A00BEE037 /* MBHItemHarvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C66072B1FEC5F9A00BEE037 /* MBHItemHarvest.swift */; };
 		7C6677DD20A374E0001D082E /* MBHItemAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6677DC20A374E0001D082E /* MBHItemAnnotation.swift */; };
 		7C6677DF20A39BB4001D082E /* MapSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6677DE20A39BB4001D082E /* MapSearchView.swift */; };
+		7C6677E120A4E2E1001D082E /* MapSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6677E020A4E2E1001D082E /* MapSearchTableViewCell.swift */; };
 		7C702035203241C7009E3B94 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C702034203241C7009E3B94 /* MapVC.swift */; };
 		7C7AE096206ABA6700827F73 /* FilterMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7AE095206ABA6700827F73 /* FilterMenuView.swift */; };
 		7C86719920837DBF00A20147 /* InfoDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86719820837DBF00A20147 /* InfoDetailsVC.swift */; };
@@ -65,6 +66,7 @@
 		7C66072B1FEC5F9A00BEE037 /* MBHItemHarvest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBHItemHarvest.swift; sourceTree = "<group>"; };
 		7C6677DC20A374E0001D082E /* MBHItemAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBHItemAnnotation.swift; sourceTree = "<group>"; };
 		7C6677DE20A39BB4001D082E /* MapSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchView.swift; sourceTree = "<group>"; };
+		7C6677E020A4E2E1001D082E /* MapSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchTableViewCell.swift; sourceTree = "<group>"; };
 		7C702034203241C7009E3B94 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		7C7AE095206ABA6700827F73 /* FilterMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMenuView.swift; sourceTree = "<group>"; };
 		7C86719820837DBF00A20147 /* InfoDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDetailsVC.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				7C90B3DB1F44EBE400575DC1 /* BerriesTableViewCell.swift */,
 				7C90B3E11F46360200575DC1 /* HerbsTableViewCell.swift */,
 				7C3E2D9020827B7C0073C470 /* InfoTableViewCell.swift */,
+				7C6677E020A4E2E1001D082E /* MapSearchTableViewCell.swift */,
 				7CF588D11EF9C8130072DC72 /* MainMenuButton.swift */,
 				7C1071111ED388D700DE8F98 /* Main.storyboard */,
 				7C1071141ED388D700DE8F98 /* Assets.xcassets */,
@@ -334,6 +337,7 @@
 				7C90B3DC1F44EBE400575DC1 /* BerriesTableViewCell.swift in Sources */,
 				7C702035203241C7009E3B94 /* MapVC.swift in Sources */,
 				7C90B3D21F31214C00575DC1 /* MainMenuVC.swift in Sources */,
+				7C6677E120A4E2E1001D082E /* MapSearchTableViewCell.swift in Sources */,
 				7C10710E1ED388D700DE8F98 /* AppDelegate.swift in Sources */,
 				7CAB35861FC344BE00180C27 /* BerriesDetailsVC.swift in Sources */,
 				7CAB35881FC34CC200180C27 /* HerbsDetailsVC.swift in Sources */,

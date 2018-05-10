@@ -12,7 +12,7 @@ import MapKit
 class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var map: MKMapView!
-    @IBOutlet weak var searchView: FilterMenuView!
+    @IBOutlet weak var searchView: MapSearchView!
     @IBOutlet weak var tableView: UITableView!
     
     let locationMager = CLLocationManager()
@@ -28,6 +28,10 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
     @IBAction func btnAddAnnotationTapped(_ sender: Any) {
         //createAnnotation(location: map.userLocation.coordinate, title: "Гриб!")
         searchView.isHidden = false
+    }
+    
+    @IBAction func btnCloseTapped(_ sender: Any) {
+        searchView.isHidden = true
     }
     
     override func viewDidLoad() {
@@ -77,12 +81,16 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "mapSearchCell", for: indexPath) as? UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "mapSearchCell", for: indexPath) as? MapSearchTableViewCell {
             
-            cell.textLabel?.text = MBHDB.sharedInstance.MBHItemsMushrooms[indexPath.row].title
+            cell.img.image = UIImage(named: "item_1_\(MBHDB.sharedInstance.MBHItemsMushrooms[indexPath.row].id)_thumb")
+            cell.lblTitle.text = MBHDB.sharedInstance.MBHItemsMushrooms[indexPath.row].title
             
             return cell
+        } else {
+            return UITableViewCell()
         }
     }
+    
 
 }
