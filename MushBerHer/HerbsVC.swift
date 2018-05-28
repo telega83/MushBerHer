@@ -204,7 +204,6 @@ class HerbsVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIS
     
     //Add to favourites / remove from favourites swipe menu
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
         let favourites = UITableViewRowAction(style: .normal, title: "") { (action, indexPath) in
             //add to/remove from favourites
             print("Hey! \(self.resDataSet[indexPath.row].title)")

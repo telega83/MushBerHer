@@ -22,17 +22,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MBHDB.getInfoFromDB():MBHDB.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "MBHInfo">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MBHItemHarvest.generateInsertHarvestQueries(itemId:):MBHItemHarvest.swift">
-      </ContextState>
-      <ContextState
          contextName = "InfoVC.prepare(for:sender:):InfoVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -40,6 +29,17 @@
             </PersistentString>
             <PersistentString
                value = "MBHDB.sharedInstance.MBHInfo[row].title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MBHItemHarvest.generateInsertHarvestQueries(itemId:):MBHItemHarvest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MBHDB.getInfoFromDB():MBHDB.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MBHInfo">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -61,13 +61,13 @@
                value = "_massRanges">
             </PersistentString>
             <PersistentString
-               value = "_endRanges">
+               value = "_startRanges">
             </PersistentString>
             <PersistentString
                value = "_poorRanges">
             </PersistentString>
             <PersistentString
-               value = "_startRanges">
+               value = "_endRanges">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -84,6 +84,14 @@
          <PersistentStrings>
             <PersistentString
                value = "MBHItems">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HerbsVC.viewDidLoad():HerbsVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MBHDB.sharedInstance">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -107,13 +115,13 @@
          contextName = "MushroomsVC.tableView(_:cellForRowAt:):MushroomsVC.swift">
          <PersistentStrings>
             <PersistentString
+               value = "filteredData">
+            </PersistentString>
+            <PersistentString
                value = "indexPath.row">
             </PersistentString>
             <PersistentString
                value = "resDataSet">
-            </PersistentString>
-            <PersistentString
-               value = "filteredData">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -127,16 +135,16 @@
                value = "item[&quot;day_max&quot;] as Int">
             </PersistentString>
             <PersistentString
-               value = "rawData.results">
+               value = "_startRanges">
             </PersistentString>
             <PersistentString
                value = "item[&quot;day_min&quot;] as Int">
             </PersistentString>
             <PersistentString
-               value = "_startRanges">
+               value = "_endRanges">
             </PersistentString>
             <PersistentString
-               value = "_endRanges">
+               value = "rawData.results">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -206,13 +214,13 @@
          contextName = "MBHDB.init() -&gt; MBHDB:MBHDB.swift">
          <PersistentStrings>
             <PersistentString
+               value = "MBHItemsHerbs">
+            </PersistentString>
+            <PersistentString
                value = "MBHItemsMushrooms">
             </PersistentString>
             <PersistentString
                value = "MBHItemsBerries">
-            </PersistentString>
-            <PersistentString
-               value = "MBHItemsHerbs">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
