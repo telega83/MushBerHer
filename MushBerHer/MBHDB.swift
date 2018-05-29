@@ -9,6 +9,7 @@
 import Foundation
 import AEXML
 import SQLiteManager
+import MapKit
 
 class MBHDB {
     
@@ -163,6 +164,7 @@ class MBHDB {
                 getItemsFromDB(category: 2)
                 getItemsFromDB(category: 3)
                 getInfoFromDB()
+                getAnnotationsFromDB()
             }
         } catch {
             return
@@ -315,6 +317,25 @@ class MBHDB {
         }
     }
     
+    func getAnnotationsFromDB() {
+        do {
+            let database = try SQLitePool.manager().initialize(database: "MushBerHer", withExtension: "sqlite")
+            let resItems =  try database.query("select * from map_point")
+            
+            if resItems.affectedRowCount != 0 {
+                for item in resItems.results! {
+                    let name = item["name"] as! String
+                    let latitude = item["latitude"] as! Double
+                    let longtitude = item["longitude"] as! Double
+                    
+                    MBHAnnotations.append(MBHItemAnnotation(coordinate: CLLocationCoordinate2DMake(CLLocationDegrees(latitude), CLLocationDegrees(longtitude)), title: name))
+                }
+            }
+        } catch {
+            return
+        }
+    }
+    
     func getItems(category: UInt) -> [MBHItem]{
         var result = [MBHItem]()
         if category == 1 {
@@ -376,16 +397,12 @@ class MBHDB {
         }
     }
     
-    func saveAnnotationToDB () {
-        
+    func saveAnnotationToDB (item: MBHItemAnnotation) {
+        do {
+            let database = try SQLitePool.manager().initialize(database: "MushBerHer", withExtension: "sqlite")
+            try _ = database.query("insert into map_point (id, name, latitude, longitude) values (null, '\(item.title!)', \(item.coordinate.latitude), \(item.coordinate.longitude))")
+        } catch {
+            return
+        }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

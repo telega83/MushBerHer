@@ -45,6 +45,8 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
         tableView.dataSource = self
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
+        
+        restoreAnnotations()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -77,7 +79,13 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
         let item = MBHItemAnnotation(coordinate: location, title: title)
         map.addAnnotation(item)
         MBHDB.sharedInstance.MBHAnnotations.append(item)
-        MBHDB.sharedInstance.saveAnnotationToDB()
+        MBHDB.sharedInstance.saveAnnotationToDB(item: item)
+    }
+    
+    func restoreAnnotations() {
+        for item in MBHDB.sharedInstance.MBHAnnotations {
+            map.addAnnotation(item)
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -116,6 +124,7 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
         print(map.userLocation.coordinate.latitude)
         print(map.userLocation.coordinate.longitude)
         
+        searchBar.endEditing(true)
         searchView.isHidden = true
         tableView.deselectRow(at: indexPath, animated: false)
         createAnnotation(location: map.userLocation.coordinate, title: resDataSet[indexPath.row].title)
