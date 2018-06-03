@@ -10,6 +10,7 @@ import Foundation
 import MapKit
 
 class MBHItemAnnotation: NSObject, MKAnnotation {
+    var identifier = "item"
     var coordinate = CLLocationCoordinate2D()
     var title: String?
     

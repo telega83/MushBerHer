@@ -32,6 +32,7 @@ class MBHDB {
     var mushroomsContentOffset: CGPoint
     var berriesContentOffset: CGPoint
     var herbsContentOffset: CGPoint
+    var infoContentOffset: CGPoint
     
     //UISearchBars values
     var mushroomsSearchBarText = String()
@@ -59,6 +60,7 @@ class MBHDB {
         mushroomsContentOffset = CGPoint(x: 0, y: 0)
         berriesContentOffset = CGPoint(x: 0, y: 0)
         herbsContentOffset = CGPoint(x: 0, y: 0)
+        infoContentOffset = CGPoint(x: 0, y: 25)
         
         //Reset favourites switches
         mushroomsShowFavourites = false

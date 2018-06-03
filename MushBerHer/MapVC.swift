@@ -75,6 +75,35 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
         }
     }
     
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var view: MKPinAnnotationView
+        guard let annotation = annotation as? MBHItemAnnotation else {return nil}
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: annotation.identifier) as? MKPinAnnotationView {
+            view = dequeuedView
+        } else {
+            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: annotation.identifier)
+        }
+        view.animatesDrop = true
+        view.canShowCallout = true
+        
+        let removeIcon = UIImage(named: "map_remove")
+        let btn = UIButton(type: .custom)
+        btn.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
+        btn.setImage(removeIcon, for: UIControlState.normal)
+        view.rightCalloutAccessoryView = btn
+        
+        return view
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let annotation = view.annotation as! MBHItemAnnotation
+        
+        print(annotation.title)
+        
+        //Remove annotation from collection and from DB
+        
+    }
+    
     func createAnnotation(location: CLLocationCoordinate2D, title: String) {
         let item = MBHItemAnnotation(coordinate: location, title: title)
         map.addAnnotation(item)
@@ -119,16 +148,10 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        print("=) - \(indexPath.row)")
-        print(map.userLocation.coordinate.latitude)
-        print(map.userLocation.coordinate.longitude)
-        
         searchBar.endEditing(true)
         searchView.isHidden = true
         tableView.deselectRow(at: indexPath, animated: false)
         createAnnotation(location: map.userLocation.coordinate, title: resDataSet[indexPath.row].title)
-        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

@@ -25,6 +25,15 @@
          contextName = "InfoVC.prepare(for:sender:):InfoVC.swift">
          <PersistentStrings>
             <PersistentString
+               value = " MBHDB.sharedInstance.infoContentOffset">
+            </PersistentString>
+            <PersistentString
+               value = "tableView.contentOffset">
+            </PersistentString>
+            <PersistentString
+               value = " MBHDB.sharedInstance.mushroomsContentOffset">
+            </PersistentString>
+            <PersistentString
                value = "MBHDB.sharedInstance.MBHInfo[row]">
             </PersistentString>
             <PersistentString
@@ -203,6 +212,14 @@
          <PersistentStrings>
             <PersistentString
                value = "&quot;insert into map_point (id, name, latitude, longtitude) values (null, &apos;\(item.title!)&apos;, \(item.coordinate.latitude), \(item.coordinate.longitude))&quot;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "InfoVC.viewDidLoad():InfoVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MBHDB.sharedInstance.infoContentOffset">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

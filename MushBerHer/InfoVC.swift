@@ -17,6 +17,9 @@ class InfoVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
         tableView.dataSource = self
         tableView.delegate = self
+        
+        //Restore content offset
+        tableView.setContentOffset(MBHDB.sharedInstance.infoContentOffset, animated: true)
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,6 +44,9 @@ class InfoVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //Navigate to Info details view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Save content offset value
+        MBHDB.sharedInstance.infoContentOffset = tableView.contentOffset
+        
         if segue.identifier == "infoDetails",
         let destination = segue.destination as? InfoDetailsVC,
         let row = tableView.indexPathForSelectedRow?.row {
