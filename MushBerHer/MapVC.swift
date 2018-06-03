@@ -99,10 +99,31 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
         let annotation = view.annotation as! MBHItemAnnotation
         
         print(annotation.title)
+        confirmDeleteAnnotation(title: annotation.title!)
         
         //Remove annotation from collection and from DB
         
     }
+    
+    func confirmDeleteAnnotation(title: String) {
+        let alert = UIAlertController(title: "Удаление метки", message: "Вы уверены, что хотите удалить метку \"\(title)\"", preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: "Удалить", style: .destructive, handler: deleteAnnotationHandler)
+        //let CancelAction = UIAlertAction(title: "Отменить", style: .cancel, handler: cancelDeleteExercise())
+        
+        alert.addAction(deleteAction)
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+    func deleteAnnotationHandler(alertAction: UIAlertAction!) -> Void {
+        
+    }
+    
+    //func cancelDeleteExercise(alertAction: UIAlertAction!) {
+      //  return nil
+    //}
     
     func createAnnotation(location: CLLocationCoordinate2D, title: String) {
         let item = MBHItemAnnotation(coordinate: location, title: title)
