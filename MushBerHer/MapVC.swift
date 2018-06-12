@@ -97,36 +97,30 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let annotation = view.annotation as! MBHItemAnnotation
-        
-        print(annotation.title)
-        confirmDeleteAnnotation(title: annotation.title!)
-        
-        //Remove annotation from collection and from DB
-        
+        confirmDeleteAnnotation(annotation: annotation)
     }
     
-    func confirmDeleteAnnotation(title: String) {
-        let alert = UIAlertController(title: "Удаление метки", message: "Вы уверены, что хотите удалить метку \"\(title)\"", preferredStyle: .actionSheet)
+    func confirmDeleteAnnotation(annotation: MBHItemAnnotation) {
+        let alert = UIAlertController(title: "Удаление метки", message: "Вы уверены, что хотите удалить метку \(annotation.title!)", preferredStyle: .actionSheet)
         
-        let deleteAction = UIAlertAction(title: "Удалить", style: .destructive, handler: deleteAnnotationHandler)
-        //let CancelAction = UIAlertAction(title: "Отменить", style: .cancel, handler: cancelDeleteExercise())
+        let deleteAction = UIAlertAction(title: "Удалить", style: .destructive, handler:  { (action) -> Void in
+            //self.map.removeAnnotation(map.annotations.filter( {$0.} ))
+            MBHDB.sharedInstance.MBHAnnotations = MBHDB.sharedInstance.MBHAnnotations.filter( {$0.uuid != annotation.uuid} )
+            MBHDB.sharedInstance.deleteAnnotationFromDB(item: annotation)
+            self.restoreAnnotations()
+        })
+        
+        let cancelAction = UIAlertAction(title: "Отменить", style: .cancel, handler: { (action) -> Void in
+            print("Delete canceled")
+        })
         
         alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
-        
-        
     }
-    
-    func deleteAnnotationHandler(alertAction: UIAlertAction!) -> Void {
-        
-    }
-    
-    //func cancelDeleteExercise(alertAction: UIAlertAction!) {
-      //  return nil
-    //}
     
     func createAnnotation(location: CLLocationCoordinate2D, title: String) {
-        let item = MBHItemAnnotation(coordinate: location, title: title)
+        let item = MBHItemAnnotation(coordinate: location, title: title, uuid: UUID().uuidString.lowercased())
         map.addAnnotation(item)
         MBHDB.sharedInstance.MBHAnnotations.append(item)
         MBHDB.sharedInstance.saveAnnotationToDB(item: item)

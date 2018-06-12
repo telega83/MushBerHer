@@ -28,7 +28,7 @@
                value = " MBHDB.sharedInstance.infoContentOffset">
             </PersistentString>
             <PersistentString
-               value = "tableView.contentOffset">
+               value = "MBHDB.sharedInstance.MBHInfo[row].title">
             </PersistentString>
             <PersistentString
                value = " MBHDB.sharedInstance.mushroomsContentOffset">
@@ -37,7 +37,7 @@
                value = "MBHDB.sharedInstance.MBHInfo[row]">
             </PersistentString>
             <PersistentString
-               value = "MBHDB.sharedInstance.MBHInfo[row].title">
+               value = "tableView.contentOffset">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -94,13 +94,13 @@
                value = "_startRanges">
             </PersistentString>
             <PersistentString
-               value = "_endRanges">
+               value = "_massRanges">
             </PersistentString>
             <PersistentString
                value = "_poorRanges">
             </PersistentString>
             <PersistentString
-               value = "_massRanges">
+               value = "_endRanges">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -124,13 +124,13 @@
          contextName = "MushroomsVC.tableView(_:cellForRowAt:):MushroomsVC.swift">
          <PersistentStrings>
             <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
                value = "resDataSet">
             </PersistentString>
             <PersistentString
                value = "filteredData">
-            </PersistentString>
-            <PersistentString
-               value = "indexPath.row">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -138,13 +138,13 @@
          contextName = "MBHDB.getAnnotationsFromDB():MBHDB.swift">
          <PersistentStrings>
             <PersistentString
+               value = "CLLocationCoordinate2DMake(CLLocationDegrees(latitude), CLLocationDegrees(longtitude))">
+            </PersistentString>
+            <PersistentString
                value = "MBHDB.sharedInstance.MBHAnnotations">
             </PersistentString>
             <PersistentString
                value = "CLLocationDegrees(latitude)">
-            </PersistentString>
-            <PersistentString
-               value = "CLLocationCoordinate2DMake(CLLocationDegrees(latitude), CLLocationDegrees(longtitude))">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -158,16 +158,16 @@
                value = "item[&quot;day_max&quot;] as Int">
             </PersistentString>
             <PersistentString
-               value = "_endRanges">
+               value = "rawData.results">
             </PersistentString>
             <PersistentString
                value = "item[&quot;day_min&quot;] as Int">
             </PersistentString>
             <PersistentString
-               value = "rawData.results">
+               value = "_startRanges">
             </PersistentString>
             <PersistentString
-               value = "_startRanges">
+               value = "_endRanges">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -184,6 +184,31 @@
       </ContextState>
       <ContextState
          contextName = "MBHItemHarvest.generateInsertHarvestQueries():MBHItemHarvest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MapVC.restoreAnnotations():MapVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MBHDB.sharedInstance.MBHAnnotations&#10;            map.addAnnotation(item)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MapVC.confirmDeleteAnnotation(annotation:):MapVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "annotation.uuid">
+            </PersistentString>
+            <PersistentString
+               value = "MBHDB.sharedInstance.MBHAnnotations">
+            </PersistentString>
+            <PersistentString
+               value = "map.annotations.count">
+            </PersistentString>
+            <PersistentString
+               value = "MBHDB.sharedInstance.MBHAnnotations.filter( {$0.uuid == annotation.uuid} )">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "MBHDB.createDB() -&gt; ():MBHDB.swift">
@@ -211,7 +236,16 @@
          contextName = "MBHDB.saveAnnotationToDB(item:):MBHDB.swift">
          <PersistentStrings>
             <PersistentString
-               value = "&quot;insert into map_point (id, name, latitude, longtitude) values (null, &apos;\(item.title!)&apos;, \(item.coordinate.latitude), \(item.coordinate.longitude))&quot;">
+               value = "&quot;insert into map_point (id, name, latitude, longitude) values (null, &apos;\(item.title!)&apos;, \(item.coordinate.latitude), \(item.coordinate.longitude)&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "&quot;insert into map_point (id, name, latitude, longitude, uuid) values (null, &apos;\(item.title!)&apos;, \(item.coordinate.latitude), \(item.coordinate.longitude), \(item.uuid)&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "&quot;insert into map_point (id, name, latitude, longitude, uuid) values (null, &apos;\(item.title!)&apos;, \(item.coordinate.latitude), \(item.coordinate.longitude), &apos;\(item.uuid)&apos;&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "MBHDB.sharedInstance">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -253,13 +287,13 @@
          contextName = "MBHDB.init() -&gt; MBHDB:MBHDB.swift">
          <PersistentStrings>
             <PersistentString
+               value = "MBHItemsMushrooms">
+            </PersistentString>
+            <PersistentString
                value = "MBHItemsBerries">
             </PersistentString>
             <PersistentString
                value = "MBHItemsHerbs">
-            </PersistentString>
-            <PersistentString
-               value = "MBHItemsMushrooms">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

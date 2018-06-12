@@ -329,8 +329,9 @@ class MBHDB {
                     let name = item["name"] as! String
                     let latitude = item["latitude"] as! Double
                     let longtitude = item["longitude"] as! Double
+                    let uuid = item["uuid"] as! String
                     
-                    MBHAnnotations.append(MBHItemAnnotation(coordinate: CLLocationCoordinate2DMake(CLLocationDegrees(latitude), CLLocationDegrees(longtitude)), title: name))
+                    MBHAnnotations.append(MBHItemAnnotation(coordinate: CLLocationCoordinate2DMake(CLLocationDegrees(latitude), CLLocationDegrees(longtitude)), title: name, uuid: uuid))
                 }
             }
         } catch {
@@ -399,12 +400,29 @@ class MBHDB {
         }
     }
     
-    func saveAnnotationToDB (item: MBHItemAnnotation) {
+    func saveAnnotationToDB(item: MBHItemAnnotation) {
         do {
             let database = try SQLitePool.manager().initialize(database: "MushBerHer", withExtension: "sqlite")
-            try _ = database.query("insert into map_point (id, name, latitude, longitude) values (null, '\(item.title!)', \(item.coordinate.latitude), \(item.coordinate.longitude))")
+            try _ = database.query("insert into map_point (id, name, latitude, longitude, uuid) values (null, '\(item.title!)', \(item.coordinate.latitude), \(item.coordinate.longitude), '\(item.uuid)')")
+        } catch {
+            return
+        }
+    }
+    
+    func deleteAnnotationFromDB(item: MBHItemAnnotation) {
+        do {
+            let database = try SQLitePool.manager().initialize(database: "MushBerHer", withExtension: "sqlite")
+            try _ = database.query("delete from map_point where uuid = '\(item.uuid)'")
         } catch {
             return
         }
     }
 }
+
+
+
+
+
+
+
+
