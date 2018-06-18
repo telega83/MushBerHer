@@ -92,14 +92,10 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
         let subViewWidth = (annotation.title!.count * 9) + 10 //view width based on title length
         subView.frame = CGRect(x: 3, y: 35, width: subViewWidth, height: 18)
         
-        //<h1 style="font-size:10vw">Hello World</h1>
-        
         let lbl = UILabel()
-        lbl.attributedText = TextFormatter(text: "<b>\(annotation.title!)</b>").getAttributedText()
-        
-        
+        lbl.attributedText = TextFormatter(text: "<font color=\"green\"><b>\(annotation.title!)</b><font>").getAttributedText()
         lbl.frame = subView.bounds
-        
+
         subView.addSubview(lbl)
         view.addSubview(subView)
         
