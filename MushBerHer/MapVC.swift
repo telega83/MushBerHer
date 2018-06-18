@@ -99,6 +99,8 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
         subView.addSubview(lbl)
         view.addSubview(subView)
         
+        view.image = UIImage(named: "map_remove") ////
+        
         let removeIcon = UIImage(named: "map_remove")
         let btn = UIButton(type: .custom)
         btn.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
