@@ -16,7 +16,7 @@ class MBHDB {
     static let sharedInstance = MBHDB()
     
     var MBHItems = [MBHItem]()
-    
+
     //Items
     var MBHItemsMushrooms = [MBHItem]()
     var MBHItemsBerries = [MBHItem]()

@@ -29,7 +29,6 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
     }
     
     @IBAction func btnAddAnnotationTapped(_ sender: Any) {
-        //createAnnotation(location: map.userLocation.coordinate, title: "Гриб!")
         searchView.isHidden = false
     }
     
@@ -78,13 +77,31 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         var view: MKPinAnnotationView
         guard let annotation = annotation as? MBHItemAnnotation else {return nil}
-        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: annotation.identifier) as? MKPinAnnotationView {
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: "item") as? MKPinAnnotationView {
             view = dequeuedView
         } else {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: annotation.identifier)
         }
-        view.animatesDrop = true
         view.canShowCallout = true
+        
+        for item in view.subviews {
+            item.removeFromSuperview()
+        }
+        
+        let subView = UIView()
+        let subViewWidth = (annotation.title!.count * 9) + 10 //view width based on title length
+        subView.frame = CGRect(x: 3, y: 35, width: subViewWidth, height: 18)
+        
+        //<h1 style="font-size:10vw">Hello World</h1>
+        
+        let lbl = UILabel()
+        lbl.attributedText = TextFormatter(text: "<b>\(annotation.title!)</b>").getAttributedText()
+        
+        
+        lbl.frame = subView.bounds
+        
+        subView.addSubview(lbl)
+        view.addSubview(subView)
         
         let removeIcon = UIImage(named: "map_remove")
         let btn = UIButton(type: .custom)
@@ -95,6 +112,7 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
         return view
     }
     
+    
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let annotation = view.annotation as! MBHItemAnnotation
         confirmDeleteAnnotation(annotation: annotation)
@@ -104,9 +122,15 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
         let alert = UIAlertController(title: "Удаление метки", message: "Вы уверены, что хотите удалить метку \(annotation.title!)", preferredStyle: .actionSheet)
         
         let deleteAction = UIAlertAction(title: "Удалить", style: .destructive, handler:  { (action) -> Void in
-            //self.map.removeAnnotation(map.annotations.filter( {$0.} ))
             MBHDB.sharedInstance.MBHAnnotations = MBHDB.sharedInstance.MBHAnnotations.filter( {$0.uuid != annotation.uuid} )
             MBHDB.sharedInstance.deleteAnnotationFromDB(item: annotation)
+            
+            for item in self.map.annotations {
+                if !(item is MKUserLocation) {
+                    self.map.removeAnnotation(item)
+                }
+            }
+    
             self.restoreAnnotations()
         })
         

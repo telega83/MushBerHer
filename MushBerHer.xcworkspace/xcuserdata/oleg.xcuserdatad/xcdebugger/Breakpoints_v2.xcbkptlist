@@ -10,61 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MushBerHer/MBHDB.swift"
-            timestampString = "550534084.84168"
+            timestampString = "551048468.538816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "322"
             endingLineNumber = "322"
             landmarkName = "getAnnotationsFromDB()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MushBerHer/MapVC.swift"
-            timestampString = "550534084.842351"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "confirmDeleteAnnotation(annotation:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__ObjC.UIAlertAction) -&gt; () in MushBerHer.MapVC.confirmDeleteAnnotation(annotation: MushBerHer.MBHItemAnnotation) -&gt; ()"
-                  moduleName = "MushBerHer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/oleg/Projects/MushBerHer/MushBerHer/MapVC.swift"
-                  timestampString = "550534085.631734"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "108"
-                  endingLineNumber = "108"
-                  offsetFromSymbolStart = "36">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (MushBerHer.MBHItemAnnotation) -&gt; Swift.Bool in closure #1 (__ObjC.UIAlertAction) -&gt; () in MushBerHer.MapVC.confirmDeleteAnnotation(annotation: MushBerHer.MBHItemAnnotation) -&gt; ()"
-                  moduleName = "MushBerHer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/oleg/Projects/MushBerHer/MushBerHer/MapVC.swift"
-                  timestampString = "550534085.637888"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "108"
-                  endingLineNumber = "108"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
