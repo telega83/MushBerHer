@@ -68,6 +68,10 @@ class BerriesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, U
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
         
+        //Notifications
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
         //Restore filter switches
         switchEdibility_5_6.setOn(false, animated: false)
         switchEdibility_3_4.setOn(false, animated: false)
@@ -221,7 +225,32 @@ class BerriesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, U
         return [favourites]
     }
     
-    //Navigate to mushroom details view
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
+    func keyboardWasShown(_ notification : Notification) {
+        let info = (notification as NSNotification).userInfo
+        let value = info?[UIKeyboardFrameEndUserInfoKey]
+        if let rawFrame = (value as AnyObject).cgRectValue
+        {
+            let keyboardFrame = self.tableView.convert(rawFrame, from: nil)
+            let keyboardHeight = keyboardFrame.height
+            var contentInsets : UIEdgeInsets
+            contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardHeight, 0.0)
+            
+            self.tableView.contentInset = contentInsets
+            self.tableView.scrollIndicatorInsets = contentInsets
+        }
+    }
+    
+    func keyboardWillHide(_ notification : Notification) {
+        let contentInsets = UIEdgeInsets.zero
+        self.tableView.contentInset = contentInsets
+        self.tableView.scrollIndicatorInsets = contentInsets
+    }
+    
+    //Navigate to berries details view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Save content offset value
         MBHDB.sharedInstance.berriesContentOffset = tableView.contentOffset

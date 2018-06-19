@@ -68,6 +68,10 @@ class MushroomsVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
         
+        //Notifications
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
         //Restore filter switches
         switchEdibility_5_6.setOn(false, animated: false)
         switchEdibility_3_4.setOn(false, animated: false)
@@ -204,7 +208,6 @@ class MushroomsVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
     
     //Add to favourites / remove from favourites swipe menu
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
         let favourites = UITableViewRowAction(style: .normal, title: "") { (action, indexPath) in
             //add to/remove from favourites
             print("Hey! \(self.resDataSet[indexPath.row].title)")
@@ -219,6 +222,31 @@ class MushroomsVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
         }
         
         return [favourites]
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
+    func keyboardWasShown(_ notification : Notification) {
+        let info = (notification as NSNotification).userInfo
+        let value = info?[UIKeyboardFrameEndUserInfoKey]
+        if let rawFrame = (value as AnyObject).cgRectValue
+        {
+            let keyboardFrame = self.tableView.convert(rawFrame, from: nil)
+            let keyboardHeight = keyboardFrame.height
+            var contentInsets : UIEdgeInsets
+            contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardHeight, 0.0)
+            
+            self.tableView.contentInset = contentInsets
+            self.tableView.scrollIndicatorInsets = contentInsets
+        }
+    }
+    
+    func keyboardWillHide(_ notification : Notification) {
+        let contentInsets = UIEdgeInsets.zero
+        self.tableView.contentInset = contentInsets
+        self.tableView.scrollIndicatorInsets = contentInsets
     }
     
     //Navigate to mushroom details view

@@ -45,6 +45,10 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
         
+        //Notifications
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
         restoreAnnotations()
     }
     
@@ -98,8 +102,6 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
 
         subView.addSubview(lbl)
         view.addSubview(subView)
-        
-        view.image = UIImage(named: "map_remove") ////
         
         let removeIcon = UIImage(named: "map_remove")
         let btn = UIButton(type: .custom)
@@ -205,5 +207,26 @@ class MapVC: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableVi
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
+    }
+    
+    func keyboardWasShown(_ notification : Notification) {
+        let info = (notification as NSNotification).userInfo
+        let value = info?[UIKeyboardFrameEndUserInfoKey]
+        if let rawFrame = (value as AnyObject).cgRectValue
+        {
+            let keyboardFrame = self.tableView.convert(rawFrame, from: nil)
+            let keyboardHeight = keyboardFrame.height
+            var contentInsets : UIEdgeInsets
+            contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardHeight, 0.0)
+            
+            self.tableView.contentInset = contentInsets
+            self.tableView.scrollIndicatorInsets = contentInsets
+        }
+    }
+    
+    func keyboardWillHide(_ notification : Notification) {
+        let contentInsets = UIEdgeInsets.zero
+        self.tableView.contentInset = contentInsets
+        self.tableView.scrollIndicatorInsets = contentInsets
     }
 }
