@@ -4,7 +4,18 @@
 //
 //  Created by Oleg on 28/05/2017.
 //  Copyright © 2017 telega. All rights reserved.
-//  
+//
+
+/*
+ //Sorting arrays alphabetically
+ if(category == 1) {
+ MBHItemsMushrooms.sort(by: { $0.title < $1.title  })
+ } else if (category == 2) {
+ 
+ } else if (category == 3) {
+ 
+ }
+*/
 
 import Foundation
 import AEXML
@@ -252,6 +263,13 @@ class MBHDB {
                     MBHItemsHerbs.append(MBHItem(id: id!, category_id: category_id, edibility_id: edibility_id!, title: title, title_advanced: title_advanced, additional: additional, prologue: prologue, text: text, notes: notes, harvestData: harvestData, isFavourite: 0))
                 }
             }
+            if(category == 1) {
+                MBHItemsMushrooms.sort(by: { $0.title < $1.title  })
+            } else if(category == 2) {
+                MBHItemsBerries.sort(by: { $0.title < $1.title  })
+            } else if(category == 3) {
+                MBHItemsHerbs.sort(by: { $0.title < $1.title  })
+            }
         } catch {
             return
         }
@@ -418,11 +436,3 @@ class MBHDB {
         }
     }
 }
-
-
-
-
-
-
-
-
