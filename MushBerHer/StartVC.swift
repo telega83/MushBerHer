@@ -30,7 +30,6 @@ class StartVC: UIViewController {
         workItem.notify(queue: DispatchQueue.main) {
             self.actDB.isHidden = true
             self.btnDataPreparation.isHidden = true
-            //self.lblLogo.isHidden = false
             self.imgLogo.isHidden = false
             
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {

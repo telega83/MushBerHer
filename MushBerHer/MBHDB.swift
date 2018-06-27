@@ -6,17 +6,6 @@
 //  Copyright © 2017 telega. All rights reserved.
 //
 
-/*
- //Sorting arrays alphabetically
- if(category == 1) {
- MBHItemsMushrooms.sort(by: { $0.title < $1.title  })
- } else if (category == 2) {
- 
- } else if (category == 3) {
- 
- }
-*/
-
 import Foundation
 import AEXML
 import SQLiteManager
