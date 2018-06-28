@@ -295,7 +295,7 @@
                value = "item">
             </PersistentString>
             <PersistentString
-               value = "MBHItemsHerbs">
+               value = "cnt.affectedRowCount">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

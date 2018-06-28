@@ -81,11 +81,9 @@ class MBHDB {
         //Transfer data from XML if DB is empty
         do {
             let database = try SQLitePool.manager().initialize(database: "MushBerHer", withExtension: "sqlite")
-            let resItems = try database.query("select * from item order by id asc")
-            
-            //Must use 'get count' here to improve performance
-            
-            if resItems.affectedRowCount == 0 {
+            let count = try database.query("select count(*) as items_count from item")
+        
+            if count.affectedRowCount == 0 {
                 getItemsFromXML(file: "type_1", category: 1)
                 getItemsFromXML(file: "type_2", category: 2)
                 getItemsFromXML(file: "type_3", category: 3)
