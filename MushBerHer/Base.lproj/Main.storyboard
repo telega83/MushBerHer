@@ -166,7 +166,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ic4-3g-YJG">
-                                        <rect key="frame" x="246" y="23" width="29" height="29"/>
+                                        <rect key="frame" x="250" y="22" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="filter"/>
                                         <connections>
@@ -523,7 +523,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsk-Fg-pxF">
-                                        <rect key="frame" x="246" y="23" width="29" height="29"/>
+                                        <rect key="frame" x="250" y="22" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="filter"/>
                                         <connections>
@@ -894,7 +894,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7e2-fZ-b0x">
-                                        <rect key="frame" x="246" y="23" width="29" height="29"/>
+                                        <rect key="frame" x="250" y="22" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="filter"/>
                                         <connections>
@@ -1119,10 +1119,13 @@
         <image name="menu_mushrooms" width="192" height="192"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="HcL-dd-vP9"/>
+        <segue reference="2fZ-Zu-NuL"/>
+        <segue reference="2rS-jD-hWC"/>
         <segue reference="fvY-FQ-jxX"/>
         <segue reference="h5G-Va-yZj"/>
         <segue reference="xlY-PU-2qB"/>
         <segue reference="NQn-DG-A6j"/>
-        <segue reference="jwH-C7-44H"/>
+        <segue reference="jJx-TV-mQ6"/>
     </inferredMetricsTieBreakers>
 </document>
